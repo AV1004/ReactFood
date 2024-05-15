@@ -1,4 +1,4 @@
-import fs from "node:fs/promises";
+import fs from "fs";
 
 import bodyParser from "body-parser";
 import express from "express";
@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/meals", async (req, res) => {
-  const meals = await fs.readFile("./data/available-meals.json", "utf8");
+  const meals = await fs.readFileSync("./data/available-meals.json", "utf8");
   res.json(JSON.parse(meals));
 });
 
