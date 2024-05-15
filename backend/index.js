@@ -2,6 +2,9 @@ import fs from "fs";
 
 import bodyParser from "body-parser";
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const app = express();
 
@@ -14,6 +17,11 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+app.use("/images", express.static(path.join(__dirname, "public")));
 
 app.get("/", async (req, res) => {
   res.send("Hello from ReactFood API by AV1004");

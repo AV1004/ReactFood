@@ -57,7 +57,7 @@ export default function ShowMeals({ sendDatatoCart }) {
             return (
               <li key={meal.id} className="meal-item">
                 <img
-                  src={`http://localhost:3000/${meal.image}`}
+                  src={`https://react-food-api.vercel.app/images/${meal.image}`}
                   alt={meal.name}
                 />
                 <h3>{meal.name}</h3>
