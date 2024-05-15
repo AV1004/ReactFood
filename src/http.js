@@ -1,5 +1,5 @@
 export const fetchMeals = async () => {
-  const respone = await fetch("http://localhost:3000/meals");
+  const respone = await fetch("https://react-food-api.vercel.app/meals");
   const meals = await respone.json();
 
   if (!respone.ok) {
@@ -10,7 +10,7 @@ export const fetchMeals = async () => {
 };
 
 export async function updateUserOrders(customer, cartItems) {
-  const responses = await fetch("http://localhost:3000/orders", {
+  const responses = await fetch("https://react-food-api.vercel.app/orders", {
     method: "POST",
     body: JSON.stringify({
       order: { items: cartItems, customer: customer },

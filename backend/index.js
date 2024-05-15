@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/meals", async (req, res) => {
-  const meals = await fs.readFile("./data/available-meals.json", "utf8");
+  const meals = await fs.readFile("./data/meals.json", "utf8");
   res.json(JSON.parse(meals));
 });
 
