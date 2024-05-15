@@ -15,6 +15,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", async (req, res) => {
+  res.json("Hello from ReactFood API by AV1004");
+});
+
 app.get("/meals", async (req, res) => {
   const meals = await fs.readFile("./data/available-meals.json", "utf8");
   res.json(JSON.parse(meals));
