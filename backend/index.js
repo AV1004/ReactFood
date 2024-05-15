@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", async (req, res) => {
-  res.json("Hello from ReactFood API by AV1004");
+  res.send("Hello from ReactFood API by AV1004");
 });
 
 app.get("/meals", async (req, res) => {
